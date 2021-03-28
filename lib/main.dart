@@ -33,6 +33,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var answers = ["one", "one", "one"];
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -54,22 +56,28 @@ class _MyHomePageState extends State<MyHomePage> {
               Text(
                 "Here is the question",
               ),
-              ElevatedButton(
-                child: Text("Question 1"),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: Text("Question 2"),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: Text("Question 3"),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: Text("Question 4"),
-                onPressed: () {},
-              ),
+              ...answers.map(
+                (answer) => ElevatedButton(
+                  onPressed: () {},
+                  child: Text(answer),
+                ),
+              )
+              // ElevatedButton(
+              //   child: Text("Question 1"),
+              //   onPressed: () {},
+              // ),
+              // RaisedButton(
+              //   child: Text("Question 2"),
+              //   onPressed: () {},
+              // ),
+              // RaisedButton(
+              //   child: Text("Question 3"),
+              //   onPressed: () {},
+              // ),
+              // RaisedButton(
+              //   child: Text("Question 4"),
+              //   onPressed: () {},
+              // ),
             ],
           ),
         ),
@@ -79,5 +87,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // ]),
       ),
     );
+  }
+}
+
+class Answer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
